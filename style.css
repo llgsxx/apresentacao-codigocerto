@@ -1,0 +1,354 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Anton SC", sans-serif;
+}
+
+body {
+    background: rgb(0,0,0);
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.nav-container {
+    width: 100%;
+    height: 500px;
+    background-image: url(imagens/free.png); /* Caminho para sua imagem */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.nav-menu {
+    display: inline;
+    align-items: center;
+    list-style: none;
+    padding: 100px;
+    justify-content: center;
+}
+
+.nav-menu li {
+    margin: 60px;
+    display: inline;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 40px;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #e53939;
+}
+
+
+@media (max-width: 768px) {
+    .nav-menu {
+        padding: 50px; 
+    }
+
+    .nav-menu li {
+        margin: 30px;
+        display: flex;
+    }
+
+    .nav-menu a {
+        font-size: 24px; 
+    }
+}
+
+
+.sobre-mim {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0px 300px 300px 300px;
+    gap: 100px;
+}
+
+.sobre-mim h1 {
+    color: #ffff;
+    font-weight: 400;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.sobre-mim .texto {
+    width: 80%;
+    text-align: left;
+}
+
+.sobre-mim strong {
+    color: #e53939;
+}
+
+.sobre-mim p {
+    color: #ffff;
+    font-weight: 100;
+    font-size: 24px;
+}
+
+.sobre-mim img {
+    width: 350px;
+    height: 350px;
+    border-radius: 100%;
+    border-bottom: 3px solid #ffff;
+    border-right: 3px solid #ffff;
+    border-left: 3px solid #e53939;
+    border-top: 3px solid #e53939;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    margin: 0 50px 50px 0;
+}
+
+.icone {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.icone a:hover {
+    transform: scale(1.3);
+    transition: 1s;
+}
+
+/* Media Query para telas menores */
+@media (max-width: 768px) {
+    .sobre-mim {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+    .sobre-mim h1 {
+        font-size: 20px;
+    }
+
+    .sobre-mim img {
+        margin-bottom: 30px;
+    }
+    .sobre-mim p {
+        font-size: 18px;
+        
+    }
+    .icone{
+        text-align: left;
+        align-items:center;
+        padding: 30px;
+        margin-left: 50px;
+    }
+}
+
+
+.gostos-pessoais {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.gostos-pessoais-txt {
+    color: #e53939;
+    font-weight: 400;
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.slider {
+    width: 100%;
+    display: flex;
+    transition: all 0.5s;
+    overflow: hidden;
+    padding-left: 300px;
+}
+
+.slider .slide {
+    width: 20%;
+    height: 600px;
+    text-align: center;
+    transition: 0.5s;
+    position: relative;
+}
+
+.slider .slide:nth-child(1) {
+    background: url(imagens/Valorant.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+.slider .slide:nth-child(2) {
+    background: url(imagens/praia\ \(4\).jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+.slider .slide:nth-child(3) {
+    background: url(imagens/academia.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+.slider .slide:nth-child(4) {
+    background: url(imagens/coder.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+.slider .slide:hover {
+    width: 60%;
+    cursor: pointer;
+    transition: 1.5s;
+}
+
+.slider .slide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.slide-text {
+    color: #fff;
+    text-align: center;
+    font-size: 34px;
+    margin-top: 50px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.slide:hover .slide-text {
+    opacity: 1;
+}
+
+/* Media Query para telas menores */
+@media (max-width: 768px) {
+    .gostos-pessoais {
+        height: auto; /* Ajusta a altura para se adaptar ao conteúdo */
+        padding: 20px;
+    }
+
+    .gostos-pessoais-txt {
+        font-size: 36px; /* Reduz o tamanho da fonte */
+        margin-bottom: 30px;
+    }
+
+    .slider {
+        flex-direction: column; /* Altera o layout para coluna */
+        padding-left: 0; /* Remove o padding-left */
+    }
+
+    .slider .slide {
+        width: 100%; /* Ajusta a largura para 100% */
+        height: 300px; /* Reduz a altura das imagens */
+        margin-bottom: 20px; /* Adiciona espaçamento entre as imagens */
+    }
+
+    .slider .slide:hover {
+        width: 100%; /* Mantém a largura em 100% */
+    }
+
+    .slide-text {
+        font-size: 24px; /* Reduz o tamanho da fonte */
+    }
+}
+
+
+.motivacoes {
+    width: 100%;
+    height: 70vh;
+    background-image: url(imagens/10158.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.texto-motivacoes {
+    max-width: 800px;
+    text-align: center;
+}
+
+.texto-motivacoes h1 {
+    color: #e53939;
+    font-weight: 400;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.texto-motivacoes p {
+    color: #fff;
+    font-weight: 100;
+    font-size: 28px;
+    line-height: 1.5;
+}
+
+/* Media Query para telas menores */
+@media (max-width: 768px) {
+    .motivacoes {
+        height: auto;
+        background-attachment: fixed; 
+        padding: 20px; 
+    }
+
+    .texto-motivacoes h1 {
+        font-size: 36px; /* Reduz o tamanho da fonte */
+    }
+
+    .texto-motivacoes p {
+        font-size: 20px; /* Reduz o tamanho da fonte */
+    }
+}
+
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    color: #fff;
+    padding: 50px 0;
+    gap: 1400px;
+}
+
+.icone-footer a {
+    margin: 30px;
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.botao-home a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+/* Media Query para telas menores */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column; /* Altera o layout para coluna */
+        padding: 20px; /* Ajusta o padding */
+        gap: 20px; /* Reduz o gap */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .icone-footer a, .botao-home a {
+        margin: 10px; /* Ajusta a margem dos links */
+    }
+}
+
